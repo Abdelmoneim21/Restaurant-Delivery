@@ -1,3 +1,4 @@
+import AppLoad from "../../components/AppLoad/AppLoad";
 import ExploreMenu from "../../components/ExploreMenu/ExploreMenu";
 import FoodDisplay from "../../components/FoodDisplay/FoodDisplay";
 import Header from "../../components/Header/Header";
@@ -9,6 +10,7 @@ export default function Home() {
       <Header />
       <ExploreMenu category={category} setCategory={setCategory} />
       <FoodDisplay category={category} />
+      <AppLoad />
     </div>
   );
 }
