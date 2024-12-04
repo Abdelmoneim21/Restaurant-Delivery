@@ -72,7 +72,7 @@ export default function Login({ setShoweLogin }) {
           <div className="mt-6 text-center">
             {current === "Login" ? (
               <p className="text-sm text-gray-600">
-                Don't have an account?{" "}
+                Don&apos;t have an account?{" "}
                 <span
                   onClick={() => setCurrent("Sign Up")}
                   className="text-[#e3701b] ml-3 text-xl  cursor-pointer"

@@ -1,15 +1,18 @@
 import { useState } from "react";
 import { assets } from "../../assets/assets";
+import { Link } from "react-router-dom";
 
 export default function Navbar({ setShoweLogin }) {
   const [menu, setMenu] = useState("Home");
   return (
     <div className="navbar grid md:grid-cols-3 items-center py-5">
-      <img
-        src={assets.logo}
-        alt="logo"
-        className="px-8 m-auto  sm:mb-4 md:m-2 md:mb-0"
-      />
+      <Link to="/">
+        <img
+          src={assets.logo}
+          alt="logo"
+          className="px-8 m-auto  sm:mb-4 md:m-2 md:mb-0"
+        />
+      </Link>
       <ul className="nav-menu md:flex md:text-center justify-between lg:w-[100%] cursor-pointer ">
         <li
           className={`cursor-pointer text-center ${
@@ -55,7 +58,9 @@ export default function Navbar({ setShoweLogin }) {
       <div className="nav-right flex justify-center items-center">
         <img src={assets.search_icon} alt="search" className="mr-10 pointer" />
         <div className="nav-search-icon relative">
-          <img src={assets.basket_icon} alt="basket" className="mr-10" />
+          <Link to="/cart">
+            <img src={assets.basket_icon} alt="basket" className="mr-10" />
+          </Link>
           <div className="dot absolute min-h-[10px] min-w-[10px] border-r-[50%] rounded-2xl bg-[#ff4c24] top-[-8px] left-[16px] "></div>
         </div>
         <button
