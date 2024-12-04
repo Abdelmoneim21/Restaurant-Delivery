@@ -1,10 +1,11 @@
 import { useContext, useState } from "react";
 import { StoreContext } from "../../Context/StoreContext";
+import { useNavigate } from "react-router-dom";
 
 export default function Cart() {
   const { cartItems, food_list, addToCart, removeFromCart } =
     useContext(StoreContext);
-
+  const navigate = useNavigate();
   const [promoCode, setPromoCode] = useState("");
   const [discount, setDiscount] = useState(0);
 
@@ -125,7 +126,10 @@ export default function Cart() {
               </button>
             </div>
           </div>
-          <button className="bg-orange-500 text-white px-6 py-3 rounded mt-4 w-full hover:bg-orange-600">
+          <button
+            onClick={() => navigate("/order")}
+            className="bg-orange-500 text-white px-6 py-3 rounded mt-4 w-full hover:bg-orange-600"
+          >
             Proceed to Checkout
           </button>
         </div>

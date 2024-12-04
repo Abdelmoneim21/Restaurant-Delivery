@@ -14,46 +14,54 @@ export default function Navbar({ setShoweLogin }) {
         />
       </Link>
       <ul className="nav-menu md:flex md:text-center justify-between lg:w-[100%] cursor-pointer ">
-        <li
-          className={`cursor-pointer text-center ${
-            menu === "Home" ? "border-b-2 border-b-black" : ""
-          }`}
-          onClick={() => {
-            setMenu("Home");
-          }}
-        >
-          Home
-        </li>
-        <li
-          className={`text-center ${
-            menu === "Menu" ? "border-b-2 border-b-black" : ""
-          }`}
-          onClick={() => {
-            setMenu("Menu");
-          }}
-        >
-          Menu
-        </li>
-        <li
-          className={` text-center ${
-            menu === "Mobile-App" ? "border-b-2 border-b-black" : ""
-          }`}
-          onClick={() => {
-            setMenu("Mobile-App");
-          }}
-        >
-          Mobile-App
-        </li>
-        <li
-          className={`text-center mb-4 ${
-            menu === "Contact-Us" ? "border-b-2 border-b-black" : ""
-          }`}
-          onClick={() => {
-            setMenu("Contact-Us");
-          }}
-        >
-          Contact-Us
-        </li>
+        <Link to="/">
+          <li
+            className={`cursor-pointer text-center ${
+              menu === "Home" ? "border-b-2 border-b-black" : ""
+            }`}
+            onClick={() => {
+              setMenu("Home");
+            }}
+          >
+            Home
+          </li>
+        </Link>
+        <Link to="/menu">
+          <li
+            className={`text-center ${
+              menu === "Menu" ? "border-b-2 border-b-black" : ""
+            }`}
+            onClick={() => {
+              setMenu("Menu");
+            }}
+          >
+            Menu
+          </li>
+        </Link>
+        <Link to="/mobile">
+          <li
+            className={` text-center ${
+              menu === "Mobile-App" ? "border-b-2 border-b-black" : ""
+            }`}
+            onClick={() => {
+              setMenu("Mobile-App");
+            }}
+          >
+            Mobile-App
+          </li>
+        </Link>
+        <Link to="/contact">
+          <li
+            className={`text-center mb-4 ${
+              menu === "Contact-Us" ? "border-b-2 border-b-black" : ""
+            }`}
+            onClick={() => {
+              setMenu("Contact-Us");
+            }}
+          >
+            Contact-Us
+          </li>
+        </Link>
       </ul>
       <div className="nav-right flex justify-center items-center">
         <img src={assets.search_icon} alt="search" className="mr-10 pointer" />

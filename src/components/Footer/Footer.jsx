@@ -5,7 +5,7 @@ import { FaTwitterSquare } from "react-icons/fa";
 
 export default function Footer() {
   return (
-    <div className="footer grid gap-6 md:grid-cols-3 items-center mt-[50px] px-5 py-10 text-[#d4d4d4] bg-[#2e2e2e]">
+    <div className="footer grid gap-6 md:grid-cols-3 items-center mt-[20px] px-5 py-10 text-[#d4d4d4] bg-[#2e2e2e]">
       {/* Left Section */}
       <div className="left text-center md:text-start px-5">
         <img
