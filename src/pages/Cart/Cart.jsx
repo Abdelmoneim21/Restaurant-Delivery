@@ -1,11 +1,12 @@
 import { useContext, useState } from "react";
 import { StoreContext } from "../../Context/StoreContext";
 import { useNavigate } from "react-router-dom";
-
+import { usePrice } from "../../Context/PriceContext";
 export default function Cart() {
   const { cartItems, food_list, addToCart, removeFromCart } =
     useContext(StoreContext);
   const navigate = useNavigate();
+  const { setPriceData } = usePrice();
   const [promoCode, setPromoCode] = useState("");
   const [discount, setDiscount] = useState(0);
 
@@ -28,7 +29,10 @@ export default function Cart() {
       setDiscount(0);
     }
   };
-
+  const proceedToCheckout = () => {
+    setPriceData({ subtotal, deliveryFee, total });
+    navigate("/order");
+  };
   return (
     <div className="p-4 md:p-8 bg-gray-100 min-h-screen">
       <h1 className="text-2xl md:text-3xl font-bold mb-6">Your Cart</h1>
@@ -127,7 +131,7 @@ export default function Cart() {
             </div>
           </div>
           <button
-            onClick={() => navigate("/order")}
+            onClick={proceedToCheckout}
             className="bg-orange-500 text-white px-6 py-3 rounded mt-4 w-full hover:bg-orange-600"
           >
             Proceed to Checkout

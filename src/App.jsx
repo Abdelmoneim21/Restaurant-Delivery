@@ -8,6 +8,7 @@ import Login from "./components/Login/Login";
 import AppLoad from "./components/AppLoad/AppLoad";
 import Contact from "./components/Contact/Contact";
 import PlaceOrder from "./components/PlaceOrder/PlaceOrder";
+import { PriceProvider } from "./Context/PriceContext";
 
 function App() {
   const [ShowLogin, setShoweLogin] = useState(false);
@@ -16,13 +17,15 @@ function App() {
       <div className="App">
         {ShowLogin ? <Login setShoweLogin={setShoweLogin} /> : <></>}
         <Navbar setShoweLogin={setShoweLogin} />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/cart" element={<Cart />} />
-          <Route path="/mobile" element={<AppLoad />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/order" element={<PlaceOrder />} />
-        </Routes>
+        <PriceProvider>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/cart" element={<Cart />} />
+            <Route path="/mobile" element={<AppLoad />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/order" element={<PlaceOrder />} />
+          </Routes>
+        </PriceProvider>
       </div>
       <Footer />
     </>
