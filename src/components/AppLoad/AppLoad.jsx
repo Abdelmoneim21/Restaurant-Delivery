@@ -6,16 +6,16 @@ export default function AppLoad() {
       <p className="text-center text-4xl text-[#555]">
         For Better Experience Download <br></br>Tomato App
       </p>
-      <div className="images md:flex mt-[50px] justify-center gap-[30px]">
+      <div className="images sm:flex mt-[50px] justify-center gap-[20px]">
         <img
           src={assets.play_store}
           alt="playstore"
-          className="pointer max-w-[250px] hover:w-[250px] m-auto"
+          className="pointer w-[200px] hover:scale-110  m-auto sm:m-0 transition"
         />
         <img
           src={assets.app_store}
           alt="play Store"
-          className="pointer hover:w-[250px] m-auto"
+          className="pointer w-[200px] hover:scale-110 m-auto sm:m-0 transition"
         />
       </div>
     </div>

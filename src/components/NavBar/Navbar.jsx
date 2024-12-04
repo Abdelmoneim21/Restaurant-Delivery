@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { assets } from "../../assets/assets";
 
-export default function Navbar() {
+export default function Navbar({ setShoweLogin }) {
   const [menu, setMenu] = useState("Home");
   return (
     <div className="navbar grid md:grid-cols-3 items-center py-5">
@@ -58,7 +58,10 @@ export default function Navbar() {
           <img src={assets.basket_icon} alt="basket" className="mr-10" />
           <div className="dot absolute min-h-[10px] min-w-[10px] border-r-[50%] rounded-2xl bg-[#ff4c24] top-[-8px] left-[16px] "></div>
         </div>
-        <button className="hover:bg-[#fff4f2] px-7 py-3 text-xl pointer border-[1px] border-[#ff4c24] rounded-3xl font-semibold transition">
+        <button
+          className="hover:bg-[#fff4f2] px-7 py-3 text-xl pointer border-[1px] border-[#ff4c24] rounded-3xl font-semibold transition"
+          onClick={() => setShoweLogin(true)}
+        >
           Sign In
         </button>
       </div>
